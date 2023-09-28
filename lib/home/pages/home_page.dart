@@ -10,7 +10,11 @@ class Homepage extends StatelessWidget {
         title: Text("Food App"),
       ),
       body: Center(
-        child: Text("Welcome to my food app"),
+        child: Text("Welcome to my food app",style: TextStyle(
+          color: Colors.black45,
+          fontSize: 25,
+          fontStyle: FontStyle.italic
+        ),),
       ),
       drawer: Drawer(),
     );
