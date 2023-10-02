@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:food/home/pages/home_page.dart';
 import 'package:food/home/pages/login_page.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
-  runApp(food_app());
+  runApp(const food_app());
 }
 
 class food_app extends StatelessWidget {
@@ -13,13 +14,16 @@ class food_app extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       themeMode: ThemeMode.light,
-      theme: ThemeData(primarySwatch: Colors.indigo),
+      theme: ThemeData(
+          primarySwatch: Colors.indigo,
+          fontFamily: GoogleFonts.lato().fontFamily,
+          primaryTextTheme: GoogleFonts.latoTextTheme()),
       darkTheme: ThemeData(brightness: Brightness.dark),
-      initialRoute: "/home",
+      initialRoute: "/login",
       routes: {
-        "/": (context) => LoginPage(),
-        "/home": (context) => Homepage(),
-        "/Login": (context) => LoginPage()
+        "/": (context) => const LoginPage(),
+        "/home": (context) => const Homepage(),
+        "/login": (context) => const LoginPage()
       },
     );
   }
