@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food/home/pages/home_page.dart';
 import 'package:food/home/pages/login_page.dart';
+import 'package:food/utils/routes.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -13,6 +14,7 @@ class food_app extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.light,
       theme: ThemeData(
           primarySwatch: Colors.indigo,
@@ -22,8 +24,8 @@ class food_app extends StatelessWidget {
       initialRoute: "/login",
       routes: {
         "/": (context) => const LoginPage(),
-        "/home": (context) => const Homepage(),
-        "/login": (context) => const LoginPage()
+        MyRoutes.homeRoute: (context) => const Homepage(),
+        MyRoutes.loginRoute: (context) => const LoginPage()
       },
     );
   }
